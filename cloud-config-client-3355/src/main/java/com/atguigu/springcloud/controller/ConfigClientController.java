@@ -1,7 +1,26 @@
-package com.atguigu.springcloud.controller;/**
+package com.atguigu.springcloud.controller;
+
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+/**
  * ConfigCilentController
- * 
+ *
  * @author fj
  * @date 2022/11/21 12:12
- */public class ConfigCilentController {
+ */
+@RestController
+@RefreshScope
+public class ConfigClientController {
+
+    @Value("${config.info}")
+    private String configInfo;
+
+    @GetMapping("/configInfo")
+    public String getConfigInfo(){
+        return configInfo;
+    }
+
 }
