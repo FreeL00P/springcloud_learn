@@ -1,7 +1,19 @@
-package com.atguigu.springcloud;/**
+package com.atguigu.springcloud;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
+
+/**
  * MainApp8401
- * 
+ *
  * @author fj
  * @date 2022/11/24 11:13
- */public class MainApp8401 {
+ */
+@EnableDiscoveryClient
+@SpringBootApplication
+public class MainApp8401 {
+    public static void main(String[] args) {
+        SpringApplication.run(MainApp8401.class, args);
+    }
 }
